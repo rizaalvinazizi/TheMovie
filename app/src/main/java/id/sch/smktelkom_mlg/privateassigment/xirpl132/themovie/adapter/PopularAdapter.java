@@ -58,7 +58,7 @@ public class PopularAdapter extends RecyclerView.Adapter<PopularAdapter.ViewHold
     }
 
     public interface IArticleAdapter {
-        void showDetail(String name);
+        void showDetail(String name, String path, String popularity, String overview, String orilang, String vote, String date);
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
@@ -73,7 +73,7 @@ public class PopularAdapter extends RecyclerView.Adapter<PopularAdapter.ViewHold
                 @Override
                 public void onClick(View v) {
                     Popular popular = list.get(getAdapterPosition());
-                    mIArticleAdapter.showDetail(popular.title);
+                    mIArticleAdapter.showDetail(popular.title, popular.poster_path, popular.popularity, popular.overview, popular.original_language, popular.vote_average, popular.release_date);
                 }
             });
         }

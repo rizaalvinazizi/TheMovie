@@ -110,9 +110,16 @@ public class MainActivity extends AppCompatActivity
     }
 
     @Override
-    public void showDetail(String name) {
+    public void showDetail(String name, String path, String popularity, String overview, String orilang, String vote, String date) {
         Intent intent = new Intent(this, DetailActivity.class);
         intent.putExtra("name", name);
+        intent.putExtra("path", path);
+        intent.putExtra("popularity", popularity);
+        intent.putExtra("overview", overview);
+        intent.putExtra("orilang", orilang);
+        intent.putExtra("vote", vote);
+        intent.putExtra("date", date);
+
         startActivity(intent);
     }
 }

@@ -58,7 +58,7 @@ public class TopRatedAdapter extends RecyclerView.Adapter<TopRatedAdapter.ViewHo
     }
 
     public interface IArticleAdapter {
-        void showDetail(String name);
+        void showDetail(String name, String path, String popularity, String overview, String orilang, String vote, String date);
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
@@ -73,7 +73,7 @@ public class TopRatedAdapter extends RecyclerView.Adapter<TopRatedAdapter.ViewHo
                 @Override
                 public void onClick(View v) {
                     TopRated top = list.get(getAdapterPosition());
-                    mIArticleAdapter.showDetail(top.title);
+                    mIArticleAdapter.showDetail(top.title, top.poster_path, top.popularity, top.overview, top.original_language, top.vote_average, top.release_date);
                 }
             });
         }

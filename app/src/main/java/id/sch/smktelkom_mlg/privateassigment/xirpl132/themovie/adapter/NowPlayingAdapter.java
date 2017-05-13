@@ -20,13 +20,14 @@ import id.sch.smktelkom_mlg.privateassigment.xirpl132.themovie.model.NowPlaying;
  */
 
 public class NowPlayingAdapter extends RecyclerView.Adapter<NowPlayingAdapter.ViewHolder> {
+    public static Context context;
     ArrayList<NowPlaying> list;
     IArticleAdapter mIArticleAdapter;
-    Context context;
+
 
     public NowPlayingAdapter(Context context, ArrayList<NowPlaying> list) {
         this.list = list;
-        this.context = context;
+        NowPlayingAdapter.context = context;
         mIArticleAdapter = (IArticleAdapter) context;
     }
 
@@ -58,7 +59,7 @@ public class NowPlayingAdapter extends RecyclerView.Adapter<NowPlayingAdapter.Vi
     }
 
     public interface IArticleAdapter {
-        void showDetail(String name);
+        void showDetail(String name, String path, String popularity, String overview, String orilang, String vote, String date);
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
@@ -73,7 +74,7 @@ public class NowPlayingAdapter extends RecyclerView.Adapter<NowPlayingAdapter.Vi
                 @Override
                 public void onClick(View v) {
                     NowPlaying now = list.get(getAdapterPosition());
-                    mIArticleAdapter.showDetail(now.title);
+                    mIArticleAdapter.showDetail(now.title, now.poster_path, now.popularity, now.overview, now.original_language, now.vote_average, now.release_date);
                 }
             });
         }

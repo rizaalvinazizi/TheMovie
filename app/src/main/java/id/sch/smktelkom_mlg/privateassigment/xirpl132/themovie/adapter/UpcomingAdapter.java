@@ -58,7 +58,7 @@ public class UpcomingAdapter extends RecyclerView.Adapter<UpcomingAdapter.ViewHo
     }
 
     public interface IArticleAdapter {
-        void showDetail(String name);
+        void showDetail(String name, String path, String popularity, String overview, String orilang, String vote, String date);
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
@@ -73,7 +73,7 @@ public class UpcomingAdapter extends RecyclerView.Adapter<UpcomingAdapter.ViewHo
                 @Override
                 public void onClick(View v) {
                     Upcoming upcoming = list.get(getAdapterPosition());
-                    mIArticleAdapter.showDetail(upcoming.title);
+                    mIArticleAdapter.showDetail(upcoming.title, upcoming.poster_path, upcoming.popularity, upcoming.overview, upcoming.original_language, upcoming.vote_average, upcoming.release_date);
                 }
             });
         }
