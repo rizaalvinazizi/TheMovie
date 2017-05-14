@@ -34,7 +34,11 @@
 
 ## Screenshot
 ![Screenshot1](https://github.com/rizaalvinazizi/TheMovie/blob/master/1.png)
+<br>
 ![Screenshot2](https://github.com/rizaalvinazizi/TheMovie/blob/master/2.png)
+<br>
 ![Screenshot3](https://github.com/rizaalvinazizi/TheMovie/blob/master/3.png)
+<br>
 ![Screenshot4](https://github.com/rizaalvinazizi/TheMovie/blob/master/4.png)
+<br>
 ![Screenshot5](https://github.com/rizaalvinazizi/TheMovie/blob/master/5.png)
