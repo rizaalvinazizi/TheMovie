@@ -4,19 +4,23 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/nav_now_playing"
-            android:icon="@drawable/ic_menu_camera"
+            android:icon="@drawable/ic_video_library_black_24dp"
             android:title="Now Playing" />
         <item
             android:id="@+id/nav_popular"
-            android:icon="@drawable/ic_menu_gallery"
+            android:icon="@drawable/ic_leak_add_black_24dp"
             android:title="Popular" />
         <item
             android:id="@+id/nav_top_rated"
-            android:icon="@drawable/ic_menu_slideshow"
+            android:icon="@drawable/ic_star_black_24dp"
             android:title="Top Rated" />
         <item
             android:id="@+id/nav_upcoming"
-            android:icon="@drawable/ic_menu_manage"
+            android:icon="@drawable/ic_screen_share_black_24dp"
             android:title="Upcoming" />
+        <item
+            android:id="@+id/nav_fav"
+            android:icon="@drawable/ic_favorite_black_24dp"
+            android:title="Favorit" />
     </group>
 </menu>

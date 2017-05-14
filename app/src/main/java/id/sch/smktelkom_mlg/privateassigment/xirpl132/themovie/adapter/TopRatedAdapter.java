@@ -42,6 +42,7 @@ public class TopRatedAdapter extends RecyclerView.Adapter<TopRatedAdapter.ViewHo
     public void onBindViewHolder(final ViewHolder holder, int position) {
         TopRated top = list.get(position);
         holder.tvName.setText(top.title);
+        holder.tvDeskripsi.setText(top.overview);
         Glide.with(context).load("http://image.tmdb.org/t/p/w500" + top.poster_path)
                 .crossFade()
                 .centerCrop()
@@ -63,12 +64,13 @@ public class TopRatedAdapter extends RecyclerView.Adapter<TopRatedAdapter.ViewHo
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         ImageView ivArticle;
-        TextView tvName;
+        TextView tvName, tvDeskripsi;
 
         public ViewHolder(View itemView) {
             super(itemView);
             ivArticle = (ImageView) itemView.findViewById(R.id.imageViewPoster);
             tvName = (TextView) itemView.findViewById(R.id.textViewName);
+            tvDeskripsi = (TextView) itemView.findViewById(R.id.textViewDeskripsi);
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {

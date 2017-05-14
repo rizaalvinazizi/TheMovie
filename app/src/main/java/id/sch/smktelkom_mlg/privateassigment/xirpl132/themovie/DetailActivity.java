@@ -13,9 +13,11 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 
 import id.sch.smktelkom_mlg.privateassigment.xirpl132.themovie.adapter.NowPlayingAdapter;
+import id.sch.smktelkom_mlg.privateassigment.xirpl132.themovie.model.Favourite;
 
 public class DetailActivity extends AppCompatActivity {
 
+    Favourite fav;
     String getName, getOverview, getOriLang, getPopularity, getPath, getRelease, getVote;
     TextView tvOverview, tvOriLang, tvPopularity, tvRelease, tvVote, tvName;
     ImageView ivPoster;
@@ -48,13 +50,22 @@ public class DetailActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+                Snackbar.make(view, "This film has been added to favourite", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
+
+                doSave();
             }
+
         });
 
-        setTitle(getName);
+
+        setTitle("");
         setText();
+    }
+
+    private void doSave() {
+        fav = new Favourite(getName, getPath, getPopularity, getOverview, getOriLang, getVote, getRelease);
+        fav.save();
     }
 
     private void setText() {
@@ -65,6 +76,7 @@ public class DetailActivity extends AppCompatActivity {
         tvName.setText(getName);
         tvVote.setText(getVote);
         tvRelease.setText(getRelease);
+
 
         Glide.with(NowPlayingAdapter.context).load("http://image.tmdb.org/t/p/w500" + getPath)
                 .crossFade()

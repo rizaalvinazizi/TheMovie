@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="?android:attr/selectableItemBackground"
+    android:padding="16dp">
+
+    <ImageView
+        android:id="@+id/imageViewPosterFav"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:scaleType="centerCrop"
+        tools:src="@drawable/ic_menu_send" />
+
+    <TextView
+        android:id="@+id/textViewTitleFav"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_toEndOf="@+id/imageViewPosterFav"
+        android:layout_toRightOf="@+id/imageViewPosterFav"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:textAppearance="@style/Base.TextAppearance.AppCompat.Title"
+        tools:text="Judul" />
+
+    <TextView
+        android:id="@+id/textViewOverviewFav"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/textViewTitleFav"
+        android:layout_toEndOf="@+id/imageViewPosterFav"
+        android:layout_toRightOf="@+id/imageViewPosterFav"
+        android:ellipsize="end"
+        android:maxLines="2"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        tools:text="Deskripsi" />
+
+</RelativeLayout>

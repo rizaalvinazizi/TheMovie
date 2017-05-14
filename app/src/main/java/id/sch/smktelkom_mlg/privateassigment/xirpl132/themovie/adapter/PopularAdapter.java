@@ -42,6 +42,7 @@ public class PopularAdapter extends RecyclerView.Adapter<PopularAdapter.ViewHold
     public void onBindViewHolder(final ViewHolder holder, int position) {
         Popular popular = list.get(position);
         holder.tvName.setText(popular.title);
+        holder.tvDeskripsi.setText(popular.overview);
         Glide.with(context).load("http://image.tmdb.org/t/p/w500" + popular.poster_path)
                 .crossFade()
                 .centerCrop()
@@ -63,12 +64,14 @@ public class PopularAdapter extends RecyclerView.Adapter<PopularAdapter.ViewHold
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         ImageView ivArticle;
-        TextView tvName;
+        TextView tvName, tvDeskripsi;
 
         public ViewHolder(View itemView) {
             super(itemView);
             ivArticle = (ImageView) itemView.findViewById(R.id.imageViewPoster);
             tvName = (TextView) itemView.findViewById(R.id.textViewName);
+            tvDeskripsi = (TextView) itemView.findViewById(R.id.textViewDeskripsi);
+
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {

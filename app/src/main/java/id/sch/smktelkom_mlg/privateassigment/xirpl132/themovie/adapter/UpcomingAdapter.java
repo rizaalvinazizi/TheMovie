@@ -63,12 +63,13 @@ public class UpcomingAdapter extends RecyclerView.Adapter<UpcomingAdapter.ViewHo
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         ImageView ivArticle;
-        TextView tvName;
+        TextView tvName, tvDeskripsi;
 
         public ViewHolder(View itemView) {
             super(itemView);
             ivArticle = (ImageView) itemView.findViewById(R.id.imageViewPoster);
             tvName = (TextView) itemView.findViewById(R.id.textViewName);
+            tvDeskripsi = (TextView) itemView.findViewById(R.id.textViewDeskripsi);
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
